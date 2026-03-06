@@ -7,10 +7,12 @@ from langchain_core.prompts import MessagesPlaceholder
 import os
 from dotenv import load_dotenv
 
+load_dotenv()
+
 # Initialize LLM
 llm = ChatOllama(
-    model=os.getenv("MODEL_NAME"),
-    temperature=os.getenv("TEMPRATURE"),
+    model=os.getenv("MODEL_NAME", "qwen3.5:cloud"),
+    temperature=float(os.getenv("TEMPERATURE", "0.7")),
 )
 
 # Create prompt template
@@ -25,7 +27,7 @@ chain = prompt | llm | StrOutputParser()
 
 # Chat history storage
 chat_history = []
-MAX_TURNS = os.getenv("MAX_TURNS")
+MAX_TURNS = int(os.getenv("MAX_TURNS", "5"))
 
 
 def chat(question, history):
