@@ -783,6 +783,7 @@ dependencies = [
     { name = "ipykernel" },
     { name = "langchain-ollama" },
     { name = "ollama" },
+    { name = "python-dotenv" },
     { name = "starlit" },
     { name = "streamlit" },
 ]
@@ -793,6 +794,7 @@ requires-dist = [
     { name = "ipykernel", specifier = ">=7.2.0" },
     { name = "langchain-ollama", specifier = ">=1.0.1" },
     { name = "ollama", specifier = ">=0.6.1" },
+    { name = "python-dotenv", specifier = ">=1.2.2" },
     { name = "starlit", specifier = ">=0.1.0" },
     { name = "streamlit", specifier = ">=1.55.0" },
 ]

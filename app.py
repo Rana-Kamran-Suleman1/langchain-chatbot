@@ -4,11 +4,13 @@ from langchain_core.messages import HumanMessage, AIMessage
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import MessagesPlaceholder
+import os
+from dotenv import load_dotenv
 
 # Initialize LLM
 llm = ChatOllama(
-    model="qwen3.5:cloud",
-    temperature=0.7,
+    model=os.getenv("MODEL_NAME"),
+    temperature=os.getenv("TEMPRATURE"),
 )
 
 # Create prompt template
@@ -23,7 +25,7 @@ chain = prompt | llm | StrOutputParser()
 
 # Chat history storage
 chat_history = []
-MAX_TURNS = 5
+MAX_TURNS = os.getenv("MAX_TURNS")
 
 
 def chat(question, history):

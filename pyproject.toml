@@ -9,6 +9,7 @@ dependencies = [
     "ipykernel>=7.2.0",
     "langchain-ollama>=1.0.1",
     "ollama>=0.6.1",
+    "python-dotenv>=1.2.2",
     "starlit>=0.1.0",
     "streamlit>=1.55.0",
 ]
